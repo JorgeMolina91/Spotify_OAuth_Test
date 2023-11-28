@@ -1,5 +1,3 @@
-from dotenv import load_dotenv
-import os
 import requests
 import urllib.parse
 
@@ -12,8 +10,8 @@ app = Flask(__name__)
 app.secret_key = '03678-6y745t-7245gfskiysrt6-765sfky5'
 
 load_dotenv()
-CLIENT_ID = os.getenv('CLIENT_ID') # This CLIENT_ID is getted from the Spotify dashboard settings
-CLIENT_SECRET = os.getenv('CLIENT_SECRET')# This CLIENT_SECRET is getted from the Spotify dashboard settings
+CLIENT_ID = 'CLIENT_ID' # This CLIENT_ID is getted from the Spotify dashboard settings
+CLIENT_SECRET = 'CLIENT_SECRET'# This CLIENT_SECRET is getted from the Spotify dashboard settings
 REDIRECT_URI = 'http://localhost:5000/callback' # This URI is the one I put on the Spotify dashboard
 
 AUTH_URL = 'https://accounts.spotify.com/authorize' # This is the URL from which I'll get and refresh the authorization token
@@ -22,7 +20,7 @@ API_BAE_URL = 'https://api.spotify.com/v1/'
 
 @app.route('/')
 def index():
-    return "Welcome to my Spotify App <a href='/login'>Login with Spotify</a>"
+    return "Greetings! 😁 <a href='/login'>Login with Spotify</a>"
 
 
 @app.route('/login')
